@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/projeto_angular_luan",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

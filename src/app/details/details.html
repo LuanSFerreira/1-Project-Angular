@@ -1,0 +1,43 @@
+<body>
+<article>
+  <div class="div">
+    <div class="formulario">
+      <section class="listing-description">
+        <h2 class="listing-heading">{{housingLocation?.name}}</h2>
+        <p class="listing-location">{{housingLocation?.city}}, {{housingLocation?.state}}</p>
+      </section>
+      <section class="listing-features">
+        <h2 class="section-heading">About this housing location</h2>
+        <ul>
+          <li>Units available: {{housingLocation?.availableUnits}}</li>
+          <li>Does this location have wifi: {{housingLocation?.wifi}}</li>
+          <li>Does this location have laundry: {{housingLocation?.laundry}}</li>
+        </ul>
+      </section>
+      <section class="listing-apply">
+        <h2 class="section-heading">Apply now to live here</h2>
+        <form [formGroup]="applyForm" (submit)="submitApplication()">
+          <label class="firstNamee" for="first-name">First Name</label>
+          <input class="buttonn" id="first-name" type="text" formControlName="firstName">
+
+          <label class="lastNamee" for="last-name">Last Name</label>
+          <input class="buttonn" id="last-name" type="text" formControlName="lastName">
+
+          <label class="emaill" for="email">Email</label>
+          <input class="buttonn" id="email" type="email" formControlName="email">
+          <button type="submit" class="primary">Apply now</button>
+        </form>
+      </section> 
+    </div>
+    <div class="cImagem">
+      <img class="listing-photo" [src]="housingLocation?.photo" alt="Exterior photo of {{housingLocation?.name}}" />
+    </div>
+  </div>
+  </article>  
+</body> 
+
+<!-- O modelo agora inclui um manipulador de eventos (submit)="submitApplication()". 
+Angular usa sintaxe de parênteses ao redor do nome do evento para definir eventos no código do modelo.
+O código à direita do sinal de igual é o código que deve ser executado quando este evento for acionado. 
+Você pode vincular eventos do navegador e eventos personalizados.
+-->
